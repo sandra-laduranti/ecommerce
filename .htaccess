@@ -1,0 +1,17 @@
+SetEnv PHP_VER 5_3
+SetEnv REGISTER_GLOBALS 0
+SetEnv SESSION_USE_TRANS_SID 0
+
+Options +FollowSymlinks
+Options -Indexes
+
+RewriteEngine on
+#RewriteBase /
+RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?$ index.php?page=$1&action=$2 [NC,L]
+
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+#ErrorDocument 404 /...
